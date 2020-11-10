@@ -220,4 +220,27 @@ body {
 #content {
   padding-bottom: 100px; }
 
+#footer {
+  position: relative;
+  background: #666;
+  color: #ffffff;
+  padding: 50px 25px;
+  font-weight: 300; }
+  #footer .footer-logo img {
+    height: 44px;
+    border-style: none; }
+  #footer .menu ul li {
+    float: left;
+    width: 50%;
+    margin: 7px 0; }
+  #footer .footer-logo {
+    position: absolute;
+    top: auto;
+    bottom: 38px;
+    left: 38px; }
+  #footer p {
+    font-size: 11px;
+    line-height: 2.17;
+    color: rgba(255, 255, 255, 0.5); }
+
 /*# sourceMappingURL=common.css.map */

@@ -3,22 +3,86 @@
 
 // 잔체 공통
 .top_visual{
-    overflow: hidden;
+    display: flex; justify-content: center; align-items: center; position: relative; width: 100%; overflow: hidden;
     &::before{
      @include bgsize(cover);
      @include transform(scale(1.5));
      @include transition(transform 2.2s ease-in-out);
-     content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+     content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;background-position: center;
     }
     &.on::before{@include transform(scale(1));}
+    .txtwrap{
+        position: relative;text-align: center;color: #ffffff;
+        > *{
+          @include transition(all 0.8s ease-in-out);
+          opacity: 0; 
+        }
+      }
+      &.on .txtwrap > *{
+        @include transform(translateY(0px));
+        opacity: 1; 
+      }
 }
 
 // index
 .main_visual {
+  min-height: 600px;
   &::before{
-      background-image: url("../images/main/mv01.jpg"); background-position: center;
+      @include transition(transform 2.2s ease-in-out);
+      background-image: url("../images/main/mv01.jpg"); 
     }
+    .txtwrap{
+        padding: 0 20px;
+        > *{
+          @include transform(translateY(80px));
+        }
+        h3{font-size: 26px;font-weight: 500;line-height: 1.31;margin-bottom: 30px;}
+        p{
+            @include traDelay(0.5s);
+            font-weight: 300;line-height: 2;margin-bottom: 40px;
+          }
+        a{
+          @include border-box;
+          display: inline-block;width: 160px;height: 56px;line-height: 48px;border: 4px solid rgba(255,255,255, .3);font-size: 14px;font-weight: 300;background: rgba(255,255,255,.1);
+          // inline 은 transform 적용되지 않음
+        }
+      }
 }
+// .main_visual::before{background-image: url(../images/main/mv01.jpg);}
+/* 
+@media 기기타입 and (조건) {
+  조건을 만족하는 스타일;
+}
+미디어쿼리는 스타일의 조건문이다
+띄어쓰기 중요함
+기기타입 : screen, print, all(반응형)
 
+조건식 : min-width, max-width(크기), min-resolution, max-resolution(밀도비율,해상도), orientation(회전:portrait세로/landscape가로)
+
+http://mattmiklic.github.io/dpitest/test.html
+해상도별 미디어쿼리 제어방법
+
+* 해상도 단위
+안드로이드폰 dppx => dot per px
+ie와 오페라 미니는 dppx를 인식하지 못해서 dpi단위로 선언
+사파리 브라우저 -webkit-min-device-pixel-ratio
+
+min은 작은 해상도 부터
+max는 큰 해상도 부터
+
+작은 해상도를 반드시 먼저 선언한다
+*/
+@media 
+screen and (-webkit-min-device-pixel-ratio: 2), 
+screen and (min-resolution: 192dpi),
+screen and (min-resolution: 2dppx) {
+  .main_visual::before{background-image: url("../images/main/mv01x2.jpg");}
+}
+@media 
+screen and (-webkit-min-device-pixel-ratio: 3), 
+screen and (min-resolution: 288dpi),
+screen and (min-resolution: 3dppx) {
+  .main_visual::before{background-image: url("../images/main/mv01x3.jpg");}
+}
 
 // sub

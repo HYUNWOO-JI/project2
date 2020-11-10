@@ -1,4 +1,10 @@
+@charset "UTF-8";
 .top_visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
   overflow: hidden; }
   .top_visual::before {
     -webkit-background-size: cover;
@@ -14,13 +20,91 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    background-position: center; }
   .top_visual.on::before {
     -webkit-transform: scale(1);
     transform: scale(1); }
+  .top_visual .txtwrap {
+    position: relative;
+    text-align: center;
+    color: #ffffff; }
+    .top_visual .txtwrap > * {
+      -webkit-transition: all 0.8s ease-in-out;
+      -moz-transition: all 0.8s ease-in-out;
+      -o-transition: all 0.8s ease-in-out;
+      transition: all 0.8s ease-in-out;
+      opacity: 0; }
+  .top_visual.on .txtwrap > * {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    opacity: 1; }
 
-.main_visual::before {
-  background-image: url("../images/main/mv01.jpg");
-  background-position: center; }
+.main_visual {
+  min-height: 600px; }
+  .main_visual::before {
+    -webkit-transition: transform 2.2s ease-in-out;
+    -moz-transition: transform 2.2s ease-in-out;
+    -o-transition: transform 2.2s ease-in-out;
+    transition: transform 2.2s ease-in-out;
+    background-image: url("../images/main/mv01.jpg"); }
+  .main_visual .txtwrap {
+    padding: 0 20px; }
+    .main_visual .txtwrap > * {
+      -webkit-transform: translateY(80px);
+      transform: translateY(80px); }
+    .main_visual .txtwrap h3 {
+      font-size: 26px;
+      font-weight: 500;
+      line-height: 1.31;
+      margin-bottom: 30px; }
+    .main_visual .txtwrap p {
+      -webkit-transition-delay: 0.5s !important;
+      -o-transition-delay: 0.5s !important;
+      transition-delay: 0.5s !important;
+      font-weight: 300;
+      line-height: 2;
+      margin-bottom: 40px; }
+    .main_visual .txtwrap a {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      display: inline-block;
+      width: 160px;
+      height: 56px;
+      line-height: 48px;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      font-size: 14px;
+      font-weight: 300;
+      background: rgba(255, 255, 255, 0.1); }
+
+/* 
+@media 기기타입 and (조건) {
+  조건을 만족하는 스타일;
+}
+미디어쿼리는 스타일의 조건문이다
+띄어쓰기 중요함
+기기타입 : screen, print, all(반응형)
+
+조건식 : min-width, max-width(크기), min-resolution, max-resolution(밀도비율,해상도), orientation(회전:portrait세로/landscape가로)
+
+http://mattmiklic.github.io/dpitest/test.html
+해상도별 미디어쿼리 제어방법
+
+* 해상도 단위
+안드로이드폰 dppx => dot per px
+ie와 오페라 미니는 dppx를 인식하지 못해서 dpi단위로 선언
+사파리 브라우저 -webkit-min-device-pixel-ratio
+
+min은 작은 해상도 부터
+max는 큰 해상도 부터
+
+작은 해상도를 반드시 먼저 선언한다
+*/
+@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  .main_visual::before {
+    background-image: url("../images/main/mv01x2.jpg"); } }
+@media screen and (-webkit-min-device-pixel-ratio: 3), screen and (min-resolution: 288dpi), screen and (min-resolution: 3dppx) {
+  .main_visual::before {
+    background-image: url("../images/main/mv01x3.jpg"); } }
 
 /*# sourceMappingURL=style.css.map */

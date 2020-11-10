@@ -3,16 +3,25 @@
     -moz-transition: $value;
     -o-transition: $value;
     transition: $value;
-}
-@mixin radius($value...) {
+  }
+  @mixin traDelay($value) {
+    -webkit-transition-delay: $value !important;
+    -o-transition-delay: $value !important;
+    transition-delay: $value !important;
+  }
+  @mixin radius($value...) {
     -webkit-border-radius: $value;
     border-radius: $value;
-}
-@mixin transform($value...) {
+  }
+  @mixin transform($value...) {
     -webkit-transform: $value;
     transform: $value;
-}
-@mixin bgsize($value...) {
+  }
+  @mixin bgsize($value...) {
     -webkit-background-size: $value;
     background-size: $value;
-}
+  }
+  @mixin border-box {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
