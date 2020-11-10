@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+
+/* section #cnt1 */
+#cnt1 {height: 900px; background: url("../images/community/community_page1_01.png") no-repeat center;background-size: cover; z-index: 800;max-width:100%;height:100vh; }
+#cnt1 .title{bottom: 191px; left: 7.6%; font-size: 100px;}
+#cnt1 .title::before{content:"";position: absolute;width: 100%; height: 3px;  bottom: -1px; left:0px; font-size: 120px; background-color: white;}
+
+/* section #cnt2 */
+#cnt2 { position: relative; color: #000; height: 900px;}
+#cnt2 div { margin: 0 auto;}
+#cnt2 > div {padding-top: 99px;}
+#cnt2 ul {position: relative; margin: 0 auto;font-size: 20px; font-weight: 700;width: 1300px;height: 55px;border-top: 2px solid  #86755f; border-bottom: 2px solid #86755f;box-sizing: border-box;}
+#cnt2 ul li {float: left; cursor: pointer; text-align: center;width: 433.33px;height: 53px;line-height: 53px;}
+#cnt2 .tab:hover, #cnt2 .tab:focus, #cnt2 .tab.active {cursor: pointer;color: #fff; background-color: #442a0d; border-radius: 5px;border: none;}
+
+/* section #cnt2 게시판 */
+#cnt2 .tabpanel {margin-top: 50px;position: relative; width: 1300px;height: 580px;}
+#cnt2 .tabpanel caption {font-size: 25px;font-weight: 700;border-bottom: 2px solid black;box-sizing: border-box;text-align: left;}
+#cnt2 .tabpanel tr {font-size: 20px;text-align: center; }
+#cnt2 .tabpanel tr th {height: 53px;background-color: hsl(34, 17%, 45%,.2);}
+#cnt2 .tabpanel tr > th:nth-child(1) {width: 97px; }
+#cnt2 .tabpanel tr > th:nth-child(2) {width: 830px; }
+#cnt2 .tabpanel tr > th:nth-child(3) {width: 132px; }
+#cnt2 .tabpanel tr > th:nth-child(4) {width: 120px; }
+#cnt2 .tabpanel tr > th:nth-child(5) {width: 120px; }
+#cnt2 .tabpanel tbody tr td{height: 46px; border-bottom: 2px solid #000;}
+#cnt2 .tabpanel tbody tr:hover td, #cnt2 .tabpanel tbody tr:focus td {background-color:rgba(196, 180, 162, 0.2);font-weight: 700;} 
+#cnt2 .tabpanel tbody tr td:nth-child(2) {text-align: left; cursor: pointer;}
+
+/* 5) 탭패널 -  모두 숨기고 활성화(div.tabpanel.active)된 하나만 보여지게 함 */
+#cnt2 .tabpanel{display: none;}
+#cnt2 .tabpanel.active{display: block;}
+
+/* section #cnt2 페이지네이션 */
+.comm_btm {text-align: center;padding: 32px 0 14px;}
+#cnt2 .pagination {display: inline-block;height: 16px;}
+#cnt2 .pagination a + a {padding-left: 10px;}
+/* #cnt2 .pagination a:first-child {} */
+#cnt2 .pagination a.on {color: red;text-decoration: underline;}
+
+/* section #cnt2 버튼 */
+#cnt2 .communityBtn {position: absolute; bottom: 8px; right: 0;display: block; color: #fff;background-color: #442a0d; border-radius: 10px; width: 100px; height: 50px; text-align: center;line-height: 50px; }

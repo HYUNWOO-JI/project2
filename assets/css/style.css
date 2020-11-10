@@ -1,0 +1,26 @@
+.top_visual {
+  overflow: hidden; }
+  .top_visual::before {
+    -webkit-background-size: cover;
+    background-size: cover;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    -webkit-transition: transform 2.2s ease-in-out;
+    -moz-transition: transform 2.2s ease-in-out;
+    -o-transition: transform 2.2s ease-in-out;
+    transition: transform 2.2s ease-in-out;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .top_visual.on::before {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+
+.main_visual::before {
+  background-image: url("../images/main/mv01.jpg");
+  background-position: center; }
+
+/*# sourceMappingURL=style.css.map */

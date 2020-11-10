@@ -1,0 +1,24 @@
+@charset "utf-8";
+@import "_mixin", "_var";
+
+// 잔체 공통
+.top_visual{
+    overflow: hidden;
+    &::before{
+     @include bgsize(cover);
+     @include transform(scale(1.5));
+     @include transition(transform 2.2s ease-in-out);
+     content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    }
+    &.on::before{@include transform(scale(1));}
+}
+
+// index
+.main_visual {
+  &::before{
+      background-image: url("../images/main/mv01.jpg"); background-position: center;
+    }
+}
+
+
+// sub
