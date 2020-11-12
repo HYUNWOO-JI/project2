@@ -1,12 +1,4 @@
 $(document).ready(function () {
-  $(window).on('resize', function () {
-    var winHei = $(this).height();
-
-    //top_visual 높이 지정 : 창 한칸을 모두 차지 하기
-    $('#content .main_visual').css('height', winHei); 
-  });
-  $(window).trigger('resize');
-
   $(window).on('scroll', function () {
     var scrollT = $(this).scrollTop();
 

@@ -24,54 +24,13 @@
       }
 }
 
-// index
+// index : 본문1
 .main_visual {
-  min-height: 600px;
-  &::before{
-      @include transition(transform 2.2s ease-in-out);
-      background-image: url("../images/main/mv01.jpg"); 
-    }
-    .txtwrap{
-        padding: 0 20px;
-        > *{
-          @include transform(translateY(80px));
-        }
-        h3{font-size: 26px;font-weight: 500;line-height: 1.31;margin-bottom: 30px;}
-        p{
-            @include traDelay(0.5s);
-            font-weight: 300;line-height: 2;margin-bottom: 40px;
-          }
-        a{
-          @include border-box;
-          display: inline-block;width: 160px;height: 56px;line-height: 48px;border: 4px solid rgba(255,255,255, .3);font-size: 14px;font-weight: 300;background: rgba(255,255,255,.1);
-          // inline 은 transform 적용되지 않음
-        }
-      }
+  .swiper-slide {position:relative;
+  img {width: 100%;}
+  }
+  .slide-cont {position:absolute;bottom:30px;left:30px;color:#fff;}
 }
-// .main_visual::before{background-image: url(../images/main/mv01.jpg);}
-/* 
-@media 기기타입 and (조건) {
-  조건을 만족하는 스타일;
-}
-미디어쿼리는 스타일의 조건문이다
-띄어쓰기 중요함
-기기타입 : screen, print, all(반응형)
-
-조건식 : min-width, max-width(크기), min-resolution, max-resolution(밀도비율,해상도), orientation(회전:portrait세로/landscape가로)
-
-http://mattmiklic.github.io/dpitest/test.html
-해상도별 미디어쿼리 제어방법
-
-* 해상도 단위
-안드로이드폰 dppx => dot per px
-ie와 오페라 미니는 dppx를 인식하지 못해서 dpi단위로 선언
-사파리 브라우저 -webkit-min-device-pixel-ratio
-
-min은 작은 해상도 부터
-max는 큰 해상도 부터
-
-작은 해상도를 반드시 먼저 선언한다
-*/
 @media 
 screen and (-webkit-min-device-pixel-ratio: 2), 
 screen and (min-resolution: 192dpi),
@@ -85,4 +44,67 @@ screen and (min-resolution: 3dppx) {
   .main_visual::before{background-image: url("../images/main/mv01x3.jpg");}
 }
 
-// sub
+// index : 본문2
+.models-list {display:flex;flex-wrap:wrap;}
+.models-list > li {flex-basis:50%;}
+.models-list > li > a {display:block;overflow:hidden;}
+.models-list > li > a img {transition:transform .35s;-webkit-transition:transform .35s;}
+.models-list > li > a:hover img {transform:scale(1.4);-webkit-transform:scale(1.4);}
+
+// index : 본문3
+.car-explore {padding:30px 0;}
+        .car-explore h3 {text-align:center;font-size:24px;font-weight:bold;}
+
+// index : 본문4
+.other-links__list > li {position:relative;}
+.other-links__list > li .link {display:table;position:absolute;top:0;left:0;width:100%;height:100%;padding:50px;box-sizing:border-box;text-align:center;}
+.other-links__list > li .link > span {display:table-cell;height:100%;background:rgba(255, 255, 255, .5);vertical-align:middle;border:1px solid #000;font-size:20px;font-weight:bold;}
+
+// 서브 내차만들기 공통
+#header.carsell .btn_menu {display: none;}
+// sub : 본문 1
+
+.fixtit{position: fixed; right: 28px; top: 0; line-height: 52px;}
+.carstart{ text-align: center; padding-top: 8px; font-size: $font16;
+  
+  li {position: relative;display: inline-block; padding: 0 16px;}
+  li:nth-child(2){
+    &::before{content: ""; position: absolute; top: 0; left: 0px; width: 1px; height: 16px; background: $darkgrey;}
+  }
+
+}  
+.cartype{
+  border-bottom: 2px solid #707070;
+  margin-bottom: 40px;
+  ul li  {
+    height: 23px; padding: 8px 0;
+    > * {float: left;}
+    p {width: 70px; font-size: 14px; font-weight: 700;}
+    button {
+      @include radius(10px);
+      width: 60px; height: 23px;
+      &.wblue{background: $wblue; color: #fff;}
+      &.wgrey{background: $wgrey;}
+    }
+  }
+}
+.car_selct{
+  ul li {
+    padding-bottom: 20px; text-align: center;
+  }
+  h4 {
+    font-size: $font20; text-align: left;
+  }
+  img {width: 94.11764705882353vw;}
+  .txt p {display: inline-block; margin: 0 10px;}
+  a {
+    @include radius(10px);
+    display: block; height: 45px; line-height: 45px; background: $wblue; font-size: 17px; color: #fff; font-weight: 700; margin-top: 10px; }
+}
+
+// sub : 본문 2
+.car_color .exbtn {display: flex; margin: 0 auto;}
+.car_color .exbtn li {margin-left: 3vh;}
+.car_color .inbtn {display: flex;}
+.car_color .inbtn li {margin-left: 3vh;}
+.btn-wrap {background: #0D8FCD; display: flex; width: 330px; height: 40px; line-height: 40px; margin: 0 auto; text-align: center;}

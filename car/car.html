@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>내 차 만들기</title>
+    <link rel="apple-touch-icon" href="../assets/images/common/favicon.ico">
+    <link rel="shortcut icon" href="../assets/images/common/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../assets/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <script src="../assets/js/jquery-1.12.4.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/car.js"></script>
+    <script>
+        $(document).ready(function () {
+            // var timerani = 0;
+            // $(window).on('scroll', function () {
+            //     clearTimeout(timerani);
+
+            //     timerani = setTimeout(function () {
+            //         var scrollY = $(this).scrollTop();
+            //         var winBottom = scrollY + $(this).height();
+            //         var aniBottom = $('car_selct').offset().top + $('car_selct').outerHeight() *
+            //             0.5;
+            //         if (winBottom >= aniBottom) $('car_selct').addClass('go');
+            //     }, 50);
+            // });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <!--overflow: hidden 우측에 위치하는 네비게이션 제어-->
+        <header id="header" class="carsell">
+            <h1 class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/common/BMW_Grey_Logo.png" alt="BMW KOREA"
+                        srcset="../assets/images/common/BMW_Grey_Logox2.png 2x, ../assets/images/common/BMW_Grey_Logox3.png 3x">
+                </a>
+            </h1>
+            <button class="btn_menu">
+                <!-- 활성화되면 .active 추가됨-->
+                <span class="blind-b">메뉴 열기</span>
+                <span class="line top"></span>
+                <span class="line mid"></span>
+                <span class="line btm"></span>
+            </button>
+            <!-- #gnb는 modal 형식을 사용
+          1) 열기 버튼을 클릭하면 #gnb 첫번째 a에 포커스 강제 이동
+          2) 닫기 버튼을 누르기 전까지는 모달내부에서만 포커스 회전
+          3) 닫기 버튼을 처음의 위치(열기버튼)로 포커스 강제 이동 -->
+            <nav id="gnb">
+            </nav>
+        </header>
+
+        <section id="content">
+            <h2 class="fixtit">THE 3</h2><!-- ?? -->
+            <article>
+                <h3 class="blind-b"></h3>
+                <ul class="carstart">
+                    <li>01 모델 선택</li>
+                    <li>02 내 차 만들기</li>
+                </ul>
+                <div class="inner">
+                    <div class="cartype">
+                        <ul>
+                            <li class="engine">
+                                <p>엔진</p>
+                                <div>
+                                    <button type="button" class="wblue">가솔린</button>
+                                    <button type="button" class="wgrey">디젤</button>
+                                </div>
+                            </li>
+                            <li class="engine">
+                                <p>바디타입</p>
+                                <div>
+                                    <button type="button" class="wblue">5인승</button>
+                                    <button type="button" class="wgrey">7인승</button>
+                                </div>
+                            </li>
+                            <li class="engine">
+                                <p>구동방식</p>
+                                <div>
+                                    <button type="button" class="wblue">2WD</button>
+                                    <button type="button" class="wgrey">4WD</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="car_selct">
+                        <ul class="fade right">
+                            <li>
+                                <h4>Base</h4>
+                                <div>
+                                    <img src="../assets/images/car/M2_red.png" alt="">
+                                    <div class="txt">
+                                        <p>
+                                            <span class="blind-b">가격 </span>47,500,000 원
+                                        </p>
+                                        <p>
+                                            <span class="blind-b">선택등급 </span>가솔린 오토 2WD 5인승
+                                        </p>
+                                    </div>
+                                </div>
+                                <a href="../car/car2.html">내 차 만들기</a>
+                            </li>
+                            <li>
+                                <h4>Luxury</h4>
+                                <div>
+                                    <img src="../assets/images/car/M2_blue.png" alt="">
+                                    <div class="txt">
+                                        <p>
+                                            <span class="blind-b">가격 </span>52,500,000 원
+                                        </p>
+                                        <p>
+                                            <span class="blind-b">선택등급 </span>가솔린 오토 2WD 5인승
+                                        </p>
+                                    </div>
+                                </div>
+                                <a href="../car/car2.html">내 차 만들기</a>
+                            </li>
+                            <li>
+                                <h4>MSports Package</h4>
+                                <div>
+                                    <img src="../assets/images/car/M2_white.png" alt="">
+                                    <div class="txt">
+                                        <p>
+                                            <span class="blind-b">가격 </span>56,500,000 원
+                                        </p>
+                                        <p>
+                                            <span class="blind-b">선택등급 </span>가솔린 오토 2WD 5인승
+                                        </p>
+                                    </div>
+                                </div>
+                                <a href="../car/car2.html">내 차 만들기</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        </section>
+    </div>
+</body>
+
+</html>

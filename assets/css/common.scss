@@ -12,35 +12,50 @@
 @import "_mixin", "_var";
 
 @font-face{
+  font-family: NanumSquare;
+  font-weight: 300;
+  font-style: normal;
+  src: url("../fonts/NanumSquareL.woff") format("woff"),
+  url("../fonts/NanumSquareL.ttf") format("truetype");
+}
+@font-face{
+  font-family: NanumSquare;
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/NanumSquareR.woff") format("woff"),
+  url("../fonts/NanumSquareR.ttf") format("truetype");
+}
+@font-face{
+  font-family: NanumSquare;
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/NanumSquareB.woff") format("woff"),
+  url("../fonts/NanumSquareB.ttf") format("truetype");
+}
+@font-face{
     font-family: NotoSansKR;
     font-weight: 400;
     font-style: normal;
-    src: url("../fonts/NotoSansKR-Regular.eot");
-    src: url("../fonts/NotoSansKR-Regular.eot#iefix") format("embedded-opentype"),
-    url("../fonts/NotoSansKR-Regular.woff2") format("woff2"),
+    src: url("../fonts/NotoSansKR-Regular.woff2") format("woff2"),
     url("../fonts/NotoSansKR-Regular.woff") format("woff"),
     url("../fonts/NotoSansKR-Regular.otf") format("opentype");
-  }
-  @font-face{
-    font-family: NotoSansKR;
-    font-weight: 500;
-    font-style: normal;
-    src: url("../fonts/NotoSansKR-Medium.eot");
-    src: url("../fonts/NotoSansKR-Medium.eot#iefix") format("embedded-opentype"),
-    url("../fonts/NotoSansKR-Medium.woff2") format("woff2"),
-    url("../fonts/NotoSansKR-Medium.woff") format("woff"),
-    url("../fonts/NotoSansKR-Medium.otf") format("opentype");
-  }
-  @font-face{
-    font-family: NotoSansKR;
-    font-weight: 700;
-    font-style: normal;
-    src: url("../fonts/NotoSansKR-Bold.eot");
-    src: url("../fonts/NotoSansKR-Bold.eot#iefix") format("embedded-opentype"),
-    url("../fonts/NotoSansKR-Bold.woff2") format("woff2"),
-    url("../fonts/NotoSansKR-Bold.woff") format("woff"),
-    url("../fonts/NotoSansKR-Bold.otf") format("opentype");
-  }
+}
+@font-face{
+  font-family: NotoSansKR;
+  font-weight: 500;
+  font-style: normal;
+  src:url("../fonts/NotoSansKR-Medium.woff2") format("woff2"),
+  url("../fonts/NotoSansKR-Medium.woff") format("woff"),
+  url("../fonts/NotoSansKR-Medium.otf") format("opentype");
+}
+@font-face{
+  font-family: NotoSansKR;
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/NotoSansKR-Bold.woff2") format("woff2"),
+  url("../fonts/NotoSansKR-Bold.woff") format("woff"),
+  url("../fonts/NotoSansKR-Bold.otf") format("opentype");
+}
 
 // tag reset
 body, h1, h2, h3, h4, h5, h6, ul, p, figure, button {margin: 0;padding: 0;}
@@ -61,40 +76,31 @@ header, nav, section, article, figure, footer {display: block;}
 .clearfix::after{content: ""; display: block; clear: both;}
 .blind-b{width: 1px;height: 1px;overflow: hidden; border: none; position: absolute; clip: rect(1px, 1px, 1px, 1px); clip-path: inset(50%);}
 .center{text-align: center;}
+.inner{padding: 0 10px;}
 
-body{font-family: NtSans, serif; font-size: 14px; color: #333333; line-height: 22px; font-weight: 400; word-break: keep-all;}
+body{font-family: NanumSquare, NtSansKR, serif; font-size: 14px; color: #1c1939; line-height: 1; font-weight: 400; word-break: keep-all;}
 #wrap{overflow: hidden; min-width: 320px;}
 
 // header
 #header{
   @include transition(all 0.6s ease-in-out);
-  position: fixed;top: -56px;left: 0;width: 100%;height: 56px;z-index: 1000;
-  &.load{top: 0;} //부모선택자는 & 로 대신
-  &.bgchange{
-    background: #ffffff;border-bottom: 1px solid #e5e5e5;
-    .logo a img:last-child{opacity: 1;}
-    .btn_menu .line{background: #646464;}
-  }
+  @include border-box;
+  position: fixed;top: 0;left: 0;width: 100%;height: 52px;z-index: 1000; padding: 7px 15px; background: pink;
 }
 .logo{
-  &, a img{position: absolute;}
-  top: 11px;left: 15px;width: 105px;height: 34px;
-  a img{top: 0;left: 0;} //add
-  a img:last-child{opacity: 0;}
+  float: left; width: 39px; height: 39px;
 }
 .btn_menu{
-  &, .line{position: absolute;}
-  top: 16px;right: 15px;width: 29px;height: 24px;overflow: hidden;z-index: 1100;
+  position: relative; float: right; width: 30px; height: 26px; margin-top: 6px; z-index: 100; overflow: hidden;
   .line{
     @include radius(8px);
     @include transition(all 0.5s);
-    width: 100%;height: 4px;background: #ffffff;left: 0;
+    position: absolute; width: 100%;height: 2px;background: #000000; left: 0;
   }
   .top{top: 0;}
-  .mid{top: 10px;}
-  .btm{top: 20px;}
+  .mid{top: 12px;}
+  .btm{top: 24px;}
   &.active{
-    .line{background: #ffffff !important;}
     .top{
       @include transform(rotate(45deg));
       top: 10px;
@@ -107,7 +113,7 @@ body{font-family: NtSans, serif; font-size: 14px; color: #333333; line-height: 2
   }
 }
 #gnb{
-  display: none;position: fixed;top: 0;left: 100%;right: 0;bottom: 0;background: #555;color: #000000;overflow-y: auto;
+  display: none;position: fixed;top: 0;left: 100%;right: 0;bottom: 0;background: #fff;color: #000000;overflow-y: auto;
   > ul{
     padding: 56px 0;
     > li{
@@ -125,13 +131,13 @@ body{font-family: NtSans, serif; font-size: 14px; color: #333333; line-height: 2
   }
   ul li a{display: block;height: 35px;line-height: 35px;}
   ul li ul{
-    display: none;background: #fff;
+    display: none;background: #6A4952; color: #fff;
     li a{padding: 5px 40px;}
   }
 }
 
 // 공통 본문
-#content{padding-bottom: 100px;}
+#content{padding-bottom: 100px; padding-top: 52px;}
 
 
 // footer
@@ -143,6 +149,7 @@ body{font-family: NtSans, serif; font-size: 14px; color: #333333; line-height: 2
     width: 50%;
     margin: 7px 0;
   }
+  .menu ul:after {clear:both;display:block;content:"";}
   .footer-logo{
     position: absolute;
     top: auto;
@@ -150,4 +157,11 @@ body{font-family: NtSans, serif; font-size: 14px; color: #333333; line-height: 2
     left: 38px;
   }
   p{font-size: 11px;line-height: 2.17;color: rgba(255,255,255,.5);}
+  .copy-inner {position:relative;margin-top:20px;padding:20px 0;border-top:1px solid rgba(255, 255, 255, 0.5);border-bottom:1px solid rgba(255, 255, 255, 0.5);}
+  .copy-inner:before {content:"";display:inline-block;position:relative;top:5px;width:38px;height:38px;margin-right:20px;background:url(../images/common/BMW_White_Logo.png) no-repeat 0 0 / 100%;}
+  .copy-inner .copyright {display:inline-block;}
 }
+
+       
+         
+       

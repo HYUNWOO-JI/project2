@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .top_visual {
   display: flex;
   justify-content: center;
@@ -40,71 +39,164 @@
     transform: translateY(0px);
     opacity: 1; }
 
-.main_visual {
-  min-height: 600px; }
-  .main_visual::before {
-    -webkit-transition: transform 2.2s ease-in-out;
-    -moz-transition: transform 2.2s ease-in-out;
-    -o-transition: transform 2.2s ease-in-out;
-    transition: transform 2.2s ease-in-out;
-    background-image: url("../images/main/mv01.jpg"); }
-  .main_visual .txtwrap {
-    padding: 0 20px; }
-    .main_visual .txtwrap > * {
-      -webkit-transform: translateY(80px);
-      transform: translateY(80px); }
-    .main_visual .txtwrap h3 {
-      font-size: 26px;
-      font-weight: 500;
-      line-height: 1.31;
-      margin-bottom: 30px; }
-    .main_visual .txtwrap p {
-      -webkit-transition-delay: 0.5s !important;
-      -o-transition-delay: 0.5s !important;
-      transition-delay: 0.5s !important;
-      font-weight: 300;
-      line-height: 2;
-      margin-bottom: 40px; }
-    .main_visual .txtwrap a {
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      display: inline-block;
-      width: 160px;
-      height: 56px;
-      line-height: 48px;
-      border: 4px solid rgba(255, 255, 255, 0.3);
-      font-size: 14px;
-      font-weight: 300;
-      background: rgba(255, 255, 255, 0.1); }
+.main_visual .swiper-slide {
+  position: relative; }
+  .main_visual .swiper-slide img {
+    width: 100%; }
+.main_visual .slide-cont {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  color: #fff; }
 
-/* 
-@media 기기타입 and (조건) {
-  조건을 만족하는 스타일;
-}
-미디어쿼리는 스타일의 조건문이다
-띄어쓰기 중요함
-기기타입 : screen, print, all(반응형)
-
-조건식 : min-width, max-width(크기), min-resolution, max-resolution(밀도비율,해상도), orientation(회전:portrait세로/landscape가로)
-
-http://mattmiklic.github.io/dpitest/test.html
-해상도별 미디어쿼리 제어방법
-
-* 해상도 단위
-안드로이드폰 dppx => dot per px
-ie와 오페라 미니는 dppx를 인식하지 못해서 dpi단위로 선언
-사파리 브라우저 -webkit-min-device-pixel-ratio
-
-min은 작은 해상도 부터
-max는 큰 해상도 부터
-
-작은 해상도를 반드시 먼저 선언한다
-*/
 @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
   .main_visual::before {
     background-image: url("../images/main/mv01x2.jpg"); } }
 @media screen and (-webkit-min-device-pixel-ratio: 3), screen and (min-resolution: 288dpi), screen and (min-resolution: 3dppx) {
   .main_visual::before {
     background-image: url("../images/main/mv01x3.jpg"); } }
+.models-list {
+  display: flex;
+  flex-wrap: wrap; }
+
+.models-list > li {
+  flex-basis: 50%; }
+
+.models-list > li > a {
+  display: block;
+  overflow: hidden; }
+
+.models-list > li > a img {
+  transition: transform .35s;
+  -webkit-transition: transform .35s; }
+
+.models-list > li > a:hover img {
+  transform: scale(1.4);
+  -webkit-transform: scale(1.4); }
+
+.car-explore {
+  padding: 30px 0; }
+
+.car-explore h3 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold; }
+
+.other-links__list > li {
+  position: relative; }
+
+.other-links__list > li .link {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  box-sizing: border-box;
+  text-align: center; }
+
+.other-links__list > li .link > span {
+  display: table-cell;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  vertical-align: middle;
+  border: 1px solid #000;
+  font-size: 20px;
+  font-weight: bold; }
+
+#header.carsell .btn_menu {
+  display: none; }
+
+.fixtit {
+  position: fixed;
+  right: 28px;
+  top: 0;
+  line-height: 52px; }
+
+.carstart {
+  text-align: center;
+  padding-top: 8px;
+  font-size: 4.4444444444vw; }
+  .carstart li {
+    position: relative;
+    display: inline-block;
+    padding: 0 16px; }
+  .carstart li:nth-child(2)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 1px;
+    height: 16px;
+    background: #1c1939; }
+
+.cartype {
+  border-bottom: 2px solid #707070;
+  margin-bottom: 40px; }
+  .cartype ul li {
+    height: 23px;
+    padding: 8px 0; }
+    .cartype ul li > * {
+      float: left; }
+    .cartype ul li p {
+      width: 70px;
+      font-size: 14px;
+      font-weight: 700; }
+    .cartype ul li button {
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      width: 60px;
+      height: 23px; }
+      .cartype ul li button.wblue {
+        background: #0d8fcd;
+        color: #fff; }
+      .cartype ul li button.wgrey {
+        background: #ece9e1; }
+
+.car_selct ul li {
+  padding-bottom: 20px;
+  text-align: center; }
+.car_selct h4 {
+  font-size: 5.5555555556vw;
+  text-align: left; }
+.car_selct img {
+  width: 94.11764705882353vw; }
+.car_selct .txt p {
+  display: inline-block;
+  margin: 0 10px; }
+.car_selct a {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  display: block;
+  height: 45px;
+  line-height: 45px;
+  background: #0d8fcd;
+  font-size: 17px;
+  color: #fff;
+  font-weight: 700;
+  margin-top: 10px; }
+
+.car_color .exbtn {
+  display: flex;
+  margin: 0 auto; }
+
+.car_color .exbtn li {
+  margin-left: 3vh; }
+
+.car_color .inbtn {
+  display: flex; }
+
+.car_color .inbtn li {
+  margin-left: 3vh; }
+
+.btn-wrap {
+  background: #0D8FCD;
+  display: flex;
+  width: 330px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 auto;
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */
