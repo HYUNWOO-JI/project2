@@ -9,7 +9,7 @@ $(document).ready(function (){
 });
 
 $(document).ready(function (){
-    var inImg = ['the7_inwhite', 'the7_inred', 'the7_indarkbrown', 'the7_inkaki'];
+    var inImg = ['the7_inwhite', 'the7_indarkbrown','the7_inred','the7_inkaki'];
     $('.car_color .inbtn li button').on('click', function (){
         var tgIdx = $(this).parent().index();
         console.log(tgIdx,inImg[tgIdx]);

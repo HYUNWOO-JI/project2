@@ -43,6 +43,16 @@ screen and (min-resolution: 288dpi),
 screen and (min-resolution: 3dppx) {
   .main_visual::before{background-image: url("../images/main/mv01x3.jpg");}
 }
+.btn-item{
+  float:left;display:block;width:calc(100% / 2);padding:0 10px;box-sizing:border-box;
+}
+.slide-cont {
+  a{
+    @include radius(10px);
+    display:block;width:100%;height:50px;background:#1c69d4;color:#fff;line-height:50px;text-align:center;
+
+  }
+}
 
 // index : 본문2
 .models-list {display:flex;flex-wrap:wrap;}
@@ -65,7 +75,7 @@ screen and (min-resolution: 3dppx) {
 // sub : 본문 1
 
 .fixtit{position: fixed; right: 28px; top: 0; line-height: 52px;}
-.carstart{ text-align: center; padding-top: 8px; font-size: $font16;
+.carstart{ text-align: center; padding-top: 8px; font-size: $font16; padding-bottom: 30px;
   
   li {position: relative;display: inline-block; padding: 0 16px;}
   li:nth-child(2){
@@ -103,8 +113,93 @@ screen and (min-resolution: 3dppx) {
 }
 
 // sub : 본문 2
+.carcom {
+  left: 30px;
+  h4{font-size: 20px;margin-bottom: 10px;}
+  p{font-size: 17px; line-height: 30px;}
+}
+.car_color strong {font-weight: 700; font-size: 17px;}
+.car_color p {padding-top: 30px; border-bottom: 1px solid #333333; margin-bottom: 30px; } 
+
+.carcom h4 p {line-height: 10px;}
 .car_color .exbtn {display: flex; margin: 0 auto;}
 .car_color .exbtn li {margin-left: 3vh;}
+.car_color .exbtn li button img {margin-bottom: 30px;}
 .car_color .inbtn {display: flex;}
 .car_color .inbtn li {margin-left: 3vh;}
+.car_color .inbtn li button img {margin-bottom: 30px;}
 .btn-wrap {background: #0D8FCD; display: flex; width: 330px; height: 40px; line-height: 40px; margin: 0 auto; text-align: center;}
+
+.tablist {
+  font-size: 20px;
+    button {
+      @include radius(10px);
+      width: 50%; height: 23px;
+      &.wblue{background: $wblue; color: #fff;}
+      &.wgrey{background: $wgrey;}
+      margin: 0 auto;
+    }
+  }
+
+.taboption {
+  ul li {
+    padding-bottom: 20px; text-align: center;
+  }
+
+  a{@include radius(10px);
+    display: block; height: 45px; line-height: 45px; background: $wblue; font-size: 17px; color: #fff; font-weight: 700; margin-top: 10px; text-align: center; margin-bottom: 100px;}
+}
+
+#carZone {
+  width: 600px;
+  margin: 0 auto;
+}
+
+#estimate {
+  width: 100%;
+}
+
+#estimate th,
+td {
+  border: 1px solid black;
+}
+
+#estimate th {
+  background-color: #fff;
+  color: #000;
+}
+
+#carZone td {
+  text-align: center;
+}
+
+#tfoot {
+  font-size: 15px;
+  font-weight: bold;
+}
+// sub : 본문 3
+.final{
+  text-align: center;
+  padding-top: 100px;
+  h1{
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: 30px;
+  }
+  p{
+    font-size: 17px;
+    padding-bottom: 30px;
+  }
+}
+.complete {
+  font-size: 20px;
+  text-align: center;
+    button {
+      @include radius(10px);
+      width: 300px; height: 50px;
+      &.wblue{background: $wblue; color: #fff;}
+      &.wgrey{background: $wgrey;}
+      margin: 0 auto;
+      text-align: center;
+    }
+  }

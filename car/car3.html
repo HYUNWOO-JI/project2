@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>내 차 만들기 - BMW KOREA</title>
+    <link rel="apple-touch-icon" href="../assets/images/common/favicon.ico">
+    <link rel="shortcut icon" href="../assets/images/common/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../assets/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <script src="../assets/js/jquery-1.12.4.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/car.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <!--overflow: hidden 우측에 위치하는 네비게이션 제어-->
+        <header id="header">
+            <h1 class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/common/BMW_Grey_Logo.png" alt="BMW KOREA"
+                        srcset="../assets/images/common/BMW_Grey_Logox2.png 2x, ../assets/images/common/BMW_Grey_Logox3.png 3x">
+                </a>
+            </h1>
+            <button class="btn_menu">
+                <!-- 활성화되면 .active 추가됨-->
+                <span class="blind-b">메뉴 열기</span>
+                <span class="line top"></span>
+                <span class="line mid"></span>
+                <span class="line btm"></span>
+            </button>
+            <!-- #gnb는 modal 형식을 사용
+          1) 열기 버튼을 클릭하면 #gnb 첫번째 a에 포커스 강제 이동
+          2) 닫기 버튼을 누르기 전까지는 모달내부에서만 포커스 회전
+          3) 닫기 버튼을 처음의 위치(열기버튼)로 포커스 강제 이동 -->
+            <nav id="gnb">
+            </nav>
+        </header>
+
+        <section id="content">
+    <div class="final">
+        <h1>나의 THE3 (이)가 완성되었습니다!</h1>
+        <p>THE3 가솔린 2WD 5인승</p>
+        </div>
+        <img src="../assets/images/car/the7_purple.png" alt="">
+    </div>
+        <div class="complete">
+            <button type="button" class="wblue">pdf다운로드</button>
+        </div>
+        </section>    
+</body>
+
+</html>

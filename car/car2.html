@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>내 차 만들기</title>
+    <title>내 차 만들기 - BMW KOREA</title>
     <link rel="apple-touch-icon" href="../assets/images/common/favicon.ico">
     <link rel="shortcut icon" href="../assets/images/common/favicon.ico">
     <link rel="stylesheet" type="text/css" href="../assets/css/common.css">
@@ -12,6 +12,31 @@
     <script src="../assets/js/jquery-1.12.4.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/car.js"></script>
+    <script type="text/javascript">
+        function car() {
+            var value = document.getElementById("total").defaultValue;
+            for (var i = 1; i <= 3; i++) {
+
+                var chkObj = document.getElementById("opt" + i);
+
+                if (chkObj.checked == true) {
+                    basic_car += Number(chkObj.value);
+                }
+            }
+            document.getElementById("total").value = basic_car;
+        }
+    </script>
+    <style>
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+
+
 </head>
 
 <body>
@@ -39,164 +64,150 @@
             </nav>
         </header>
 
-        <section>
+        <section id="content">
+            <h2 class="fixtit">THE 3</h2><!-- ?? -->
             <article>
-                <ul>
+                <h3 class="blind-b"></h3>
+                <ul class="carstart">
                     <li>01 모델 선택</li>
                     <li>02 내 차 만들기</li>
                 </ul>
-                <ul>
-                    <li><a href="">엔진</a></li>
-                    <li><a href="">바디타입</a></li>
-                    <li><a href="">구동방식</a></li>
-                </ul>
-                <ul>
-                    <button>가솔린</button>
-                    <button>5인승</button>
-                    <button>2WD</button>
-                </ul>
-                <ul>
-                    <button>디젤</button>
-                    <button>7인승</button>
-                    <button>4WD</button>
-                </ul>
-                <div class="carwrap">
-                    <div class="car_mak">
-                        <ul>
-                            <li>
-                                <a href="">내 차 만들기</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="car_mak">
-                        <ul>
-                            <li>
-                                <a href="">내 차 만들기</a>
-                            </li>
-                        </ul>
-                    </div>
+            </article>
+        </section>
+        <div class="inner">
+            <article class="carcom">
+                <h4>THE3</h4>
+                <p>THE3 가솔린 2WD 5인승</p>
+                <p>총 차량 가격 47,500,000 원</p>
+            </article>
+            <div class="car_color">
+                <div class="excar">
+                    <img src="../assets/images/car/the3_grey.png" alt="">
+                    <strong>색상</strong>
+                    <p>외장색상</p>
                 </div>
-                <div class="car_mak">
-                    <ul>
+                <ul class="exbtn">
+                    <li>
+                        <button data-eximg='the3_grey'><img src="../assets/images/car/ex_1.png" alt=""></button>
+                    </li>
+                    <li>
+                        <button><img src="../assets/images/car/ex_2.png" alt=""></button>
+                    </li>
+                    <li>
+                        <button><img src="../assets/images/car/ex_3.png" alt=""></button>
+                    </li>
+                    <li>
+                        <button><img src="../assets/images/car/ex_4.png" alt=""></button>
+                    </li>
+                </ul>
+
+                <div class="car_color">
+                    <div class="incar">
+                        <img src="../assets/images/car/the7_inwhite.jpg" alt="">
+                    </div>
+                    <p>내장색상</p>
+                    <ul class="inbtn">
                         <li>
-                            <a href="">내 차 만들기</a>
+                            <button data-inimg='the7_inwhite'><img src="../assets/images/car/in_3.png" alt=""></button>
+                        </li>
+                        <li>
+                            <button><img src="../assets/images/car/in_4.png" alt=""></button>
+                        </li>
+                        <li>
+                            <button><img src="../assets/images/car/in_5.png" alt=""></button>
+                        </li>
+                        <li>
+                            <button><img src="../assets/images/car/in_6.png" alt=""></button>
                         </li>
                     </ul>
-                </div>
-    </div>
-    </div>
-    </article>
-
-    <article>
-        <strong>THE3</strong>
-        <p>THE3 가솔린 2WD 5인승</p>
-        <p>총 차량 가격 47,500,000 원</p>
-
-        <div class="car_color">
-            <div class="excar">
-                <img src="../assets/images/car/the3_grey.png" alt="">
-            </div>
-            <strong>색상</strong>
-            <p>외장색상</p>
-            <ul class="exbtn">
-                <li>
-                    <button data-eximg='the3_grey'><img src="../assets/images/car/ex_1.png" alt=""></button>
-                </li>
-                <li>
-                    <button><img src="../assets/images/car/ex_2.png" alt=""></button>
-                </li>
-                <li>
-                    <button><img src="../assets/images/car/ex_3.png" alt=""></button>
-                </li>
-                <li>
-                    <button><img src="../assets/images/car/ex_4.png" alt=""></button>
-                </li>
-            </ul>
-            
-        <div class="car_color">
-            <div class="incar">
-                <img src="../assets/images/car/the7_inwhite.jpg" alt="">
-            </div>
-            <p>내장색상</p>
-            <ul class="inbtn">
-                <li>
-                    <button data-inimg='the7_inwhite'><img src="../assets/images/car/in_3.png" alt=""></button>
-                </li>
-                <li>
-                    <button><img src="../assets/images/car/in_4.png" alt=""></button>
-                </li>
-                <li>
-                    <button><img src="../assets/images/car/in_5.png" alt=""></button>
-                </li>
-                <li>
-                    <button><img src="../assets/images/car/in_6.png" alt=""></button>
-                </li>
-            </ul>
-            <article>
-                <h2>옵션</h2>
-                <div class="optiontab">
-                    <div class="tabmenu">
-                        <ul class="menuwrap">
-                            <li class="menuicon">선택품목</li>
-                            <li class="menuicon">기본품목</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="tabcontent">
-                    <div class="taboption">
-                        <div class="taboptit">
-                            <strong>상세품목</strong>
-                            <ul>
-                                <li>
-                                    <p> 레이저라이트 <br> 2,000,000 원 </p>
-                                    <img src="../assets/images/car/option1.jpg" alt="" width="120px" height="80px">
-                                </li>
-                                <li>
-                                    <p> 13.3인치 터치식 네비게이션 <br> 680,000 원 </p>
-                                    <img src="../assets/images/car/option2.jpg" alt="" width="120px" height="80px">
-                                </li>
-                                <li>
-                                    <p> 전자식트렁크 <br> 2,800,000 원 </p>
-                                    <img src="../assets/images/car/option3.jpg" alt="" width="120px" height="80px">
-                                </li>
-                                <li>
-                                    <p> 파노라마선루프 <br> 1,800,000 원 </p>
-                                    <img src="../assets/images/car/option4.jpg" alt="" width="120px" height="80px">
-                                </li>
-                                <li>
-                                    <p> 내부 엠비언트라이트 <br> 740,000 원 </p>
-                                    <img src="../assets/images/car/option5.jpg" alt="" width="120px">
-                                </li>
-                            </ul>
+                    <div class="tablist">
+                        <h2>옵션</h2>
+                        <div>
+                            <button type="button" class="wblue">선택품목</button>
+                            <button type="button" class="wgrey">기본품목</button>
                         </div>
                     </div>
+                    <div class="tabcontent">
+                        <div class="taboption">
+                            <div class="taboptit">
+                                <strong>상세품목</strong>
+
+                                <table id="estimate">
+                                    <colgroup>
+                                        <!-- 콜그룹 함수는 -->
+                                        <col width="380px">
+                                        <col width="160px">
+                                        <col width="*">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="row">옵션</th>
+                                            <th scope="row">추가가격</th>
+                                            <th scope="row">선택</th>
+                                        </tr>
+
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td><label for="opt1"> <img src="../assets/images/car/option1.jpg" alt=""
+                                                        width="170px" height="80px">레이저라이트</label></td>
+                                            <td>2,500,000</td>
+                                            <td><input type="checkbox" name="opt1" id="opt1" value="2500000"
+                                                    onclick="car();"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><label for="opt2"><img src="../assets/images/car/option2.jpg" alt=""
+                                                        width="170px" height="80px">13인치 터치식 네비게이션</label></td>
+                                            <td>2,000,000</td>
+                                            <td><input type="checkbox" name="opt2" id="opt2" value="2000000"
+                                                    onclick="car();"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><label for="opt3"><img src="../assets/images/car/option3.jpg" alt=""
+                                                        width="170px" height="80px">전자식트렁크</label></td>
+                                            <td>4,400,000</td>
+                                            <td><input type="checkbox" name="opt3" id="opt3" value="4400000"
+                                                    onclick="car();"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="opt4"><img src="../assets/images/car/option4.jpg" alt=""
+                                                        width="170px" height="80px">파노라마 선루프</label></td>
+                                            <td>4,400,000</td>
+                                            <td><input type="checkbox" name="opt4" id="opt4" value="4400000"
+                                                    onclick="car();"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="opt5"><img src="../assets/images/car/option5.jpg" alt=""
+                                                        width="170px" height="80px">엠비언트라이트</label></td>
+                                            <td>4,400,000</td>
+                                            <td><input type="checkbox" name="opt5" id="opt5" value="4400000"
+                                                    onclick="car();"></td>
+                                        </tr>
+                                    </tbody>
+
+
+                                    <tfoot>
+                                        <tr>
+                                            <th scope="col">총 차량 가격</th>
+                                            <td colspan="2">
+                                                <input type="text" name="total" id="total" value="88900000"
+                                                    readonly="readonly">
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                                <a href="../car/car3.html">내 차 만들기 완료</a>
+                            </div>
+                        </div>
+                        </article>
+                    </div>
+                    </article>
+                    </section>
                 </div>
-                <div class="btn-wrap"><button type="button"><span>내 차 만들기 완료 </span></button></div>
-           </article>
+            </div>
         </div>
-    </article>
-
-
-
-
-
-    <footer id="footer">
-        <div class="menu">
-            <ul>
-                <li>모바일App</li>
-                <li>개인정보 처리방침</li>
-                <li>윤리경영 사이버 감사실</li>
-                <li>사이트맵</li>
-                <li>고객센터 : 080-600-6000 </li>
-                <li>저작권안내</li>
-                <li>이용약관</li>
-                <li>영상정보처리기기</li>
-            </ul>
-        </div>
-        <div class="copy-inner">
-            <p class="copyright">COPYRIGHT&copy;BMW MOTOR COMANY. <br> ALL RIGHTS RESERVED</p>
-        </div>
-    </footer>
-</body>
-
+    </body>
 </html>
