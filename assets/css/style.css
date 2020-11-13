@@ -283,7 +283,7 @@
   margin-bottom: 100px; }
 
 #carZone {
-  width: 600px;
+  width: 100%;
   margin: 0 auto; }
 
 #estimate {
@@ -303,6 +303,11 @@ td {
 #tfoot {
   font-size: 15px;
   font-weight: bold; }
+
+.optionlist {
+  text-align: center; }
+  .optionlist tr td label * {
+    vertical-align: middle; }
 
 .final {
   text-align: center;

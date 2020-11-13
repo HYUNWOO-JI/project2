@@ -15,8 +15,9 @@
     <script type="text/javascript">
         function car() {
             var value = document.getElementById("total").defaultValue;
-            for (var i = 1; i <= 3; i++) {
+            var basic_car = Number(value);
 
+            for (var i = 1; i <= 5; i++) {
                 var chkObj = document.getElementById("opt" + i);
 
                 if (chkObj.checked == true) {
@@ -31,6 +32,7 @@
             border-collapse: collapse;
             border-spacing: 0;
         }
+
         h1 {
             text-align: center;
         }
@@ -135,9 +137,9 @@
                                 <table id="estimate">
                                     <colgroup>
                                         <!-- 콜그룹 함수는 -->
-                                        <col width="380px">
-                                        <col width="160px">
-                                        <col width="*">
+                                        <col width="200px">
+                                        <col width="120px">
+                                        <col width="40px">
                                     </colgroup>
                                     <thead>
                                         <tr>
@@ -148,42 +150,42 @@
 
                                     </thead>
 
-                                    <tbody>
+                                    <tbody class="optionlist">
                                         <tr>
-                                            <td><label for="opt1"> <img src="../assets/images/car/option1.jpg" alt=""
+                                            <td class="optscr"><label for="opt1"> <img src="../assets/images/car/option1.jpg" alt=""
                                                         width="170px" height="80px">레이저라이트</label></td>
-                                            <td>2,500,000</td>
-                                            <td><input type="checkbox" name="opt1" id="opt1" value="2500000"
+                                            <td>660,000</td>
+                                            <td><input type="checkbox" name="opt1" id="opt1" value="660000"
                                                     onclick="car();"></td>
                                         </tr>
 
                                         <tr>
-                                            <td><label for="opt2"><img src="../assets/images/car/option2.jpg" alt=""
-                                                        width="170px" height="80px">13인치 터치식 네비게이션</label></td>
-                                            <td>2,000,000</td>
-                                            <td><input type="checkbox" name="opt2" id="opt2" value="2000000"
+                                            <td class="optscr"><label for="opt2"><img src="../assets/images/car/option2.jpg" alt=""
+                                                        width="170px" height="80px">터치 네비게이션</label></td>
+                                            <td>180,000</td>
+                                            <td><input type="checkbox" name="opt2" id="opt2" value="180000"
                                                     onclick="car();"></td>
                                         </tr>
 
                                         <tr>
-                                            <td><label for="opt3"><img src="../assets/images/car/option3.jpg" alt=""
-                                                        width="170px" height="80px">전자식트렁크</label></td>
-                                            <td>4,400,000</td>
-                                            <td><input type="checkbox" name="opt3" id="opt3" value="4400000"
+                                            <td class="optscr"><label for="opt3"><img src="../assets/images/car/option3.jpg" alt=""
+                                                        width="170px" height="80px">전자식 트렁크</label></td>
+                                            <td>700,000</td>
+                                            <td><input type="checkbox" name="opt3" id="opt3" value="700000"
                                                     onclick="car();"></td>
                                         </tr>
                                         <tr>
-                                            <td><label for="opt4"><img src="../assets/images/car/option4.jpg" alt=""
+                                            <td class="optscr"><label for="opt4"><img src="../assets/images/car/option4.jpg" alt=""
                                                         width="170px" height="80px">파노라마 선루프</label></td>
-                                            <td>4,400,000</td>
-                                            <td><input type="checkbox" name="opt4" id="opt4" value="4400000"
+                                            <td>940,000</td>
+                                            <td><input type="checkbox" name="opt4" id="opt4" value="940000"
                                                     onclick="car();"></td>
                                         </tr>
                                         <tr>
-                                            <td><label for="opt5"><img src="../assets/images/car/option5.jpg" alt=""
-                                                        width="170px" height="80px">엠비언트라이트</label></td>
-                                            <td>4,400,000</td>
-                                            <td><input type="checkbox" name="opt5" id="opt5" value="4400000"
+                                            <td class="optscr"><label for="opt5"><img src="../assets/images/car/option5.jpg" alt=""
+                                                        width="170px" height="80px">엠비언트 라이트</label></td>
+                                            <td>640,000</td>
+                                            <td><input type="checkbox" name="opt5" id="opt5" value="640000"
                                                     onclick="car();"></td>
                                         </tr>
                                     </tbody>
@@ -193,7 +195,7 @@
                                         <tr>
                                             <th scope="col">총 차량 가격</th>
                                             <td colspan="2">
-                                                <input type="text" name="total" id="total" value="88900000"
+                                                <input type="text" name="total" id="total" value="47500000"
                                                     readonly="readonly">
                                             </td>
                                         </tr>
@@ -209,5 +211,6 @@
                 </div>
             </div>
         </div>
-    </body>
+</body>
+
 </html>

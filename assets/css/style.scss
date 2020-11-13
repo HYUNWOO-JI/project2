@@ -150,7 +150,7 @@ screen and (min-resolution: 3dppx) {
 }
 
 #carZone {
-  width: 600px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -175,6 +175,12 @@ td {
 #tfoot {
   font-size: 15px;
   font-weight: bold;
+}
+.optionlist{
+  text-align: center;
+tr td label * {
+  vertical-align: middle;
+}
 }
 // sub : 본문 3
 .final{
