@@ -39,6 +39,30 @@
     transform: translateY(0px);
     opacity: 1; }
 
+.floating-wrap {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  background: #ece9e1;
+  top: 0;
+  left: 0;
+  padding: 7px 15px;
+  -webkit-box-pack: justify;
+  align-items: center; }
+  .floating-wrap .floating-inner {
+    width: 100%;
+    display: flex;
+    align-items: center; }
+    .floating-wrap .floating-inner .img-area {
+      width: 45%; }
+  .floating-wrap .info {
+    width: 50%; }
+  .floating-wrap .car-name {
+    text-align: left; }
+  .floating-wrap .price {
+    text-align: left; }
+
 .main_visual .swiper-slide {
   position: relative; }
   .main_visual .swiper-slide img {
@@ -46,7 +70,7 @@
 .main_visual .slide-cont {
   position: absolute;
   bottom: 30px;
-  left: 30px;
+  left: 40px;
   color: #000; }
   .main_visual .slide-cont h3 {
     font-size: 5.5555555556vw;
@@ -56,7 +80,8 @@
   .main_visual .slide-cont p {
     font-size: 4.7222222222vw;
     color: #000;
-    background-color: rgba(255, 255, 255, 0.8); }
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1.5vw; }
   .main_visual .slide-cont .p1 {
     background-color: rgba(255, 255, 255, 0.8);
     color: #000; }
@@ -64,14 +89,27 @@
     -webkit-border-radius: 10px;
     border-radius: 10px;
     display: inline-block;
-    height: 45px;
-    line-height: 45px;
+    height: 11.11111111111111vw;
+    line-height: 11.11111111111111vw;
+    padding: 0 2.777777777777778vw;
     background: #0d8fcd;
-    font-size: 17px;
+    font-size: 4.7222222222vw;
     color: #fff;
     font-weight: 700;
-    margin-top: 10px;
+    margin-top: 2.777777777777778vw;
     text-align: center; }
+.main_visual .play_stop {
+  position: absolute;
+  right: 40px;
+  bottom: 30px;
+  width: 35px;
+  height: 35px;
+  z-index: 100; }
+  .main_visual .play_stop.autoplay {
+    display: none;
+    background: pink; }
+  .main_visual .play_stop.autostop {
+    background: blue; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
   .main_visual::before {
@@ -79,6 +117,10 @@
 @media screen and (-webkit-min-device-pixel-ratio: 3), screen and (min-resolution: 288dpi), screen and (min-resolution: 3dppx) {
   .main_visual::before {
     background-image: url("../images/main/mv01x3.jpg"); } }
+.carsearch {
+  vertical-align: middle;
+  margin: 0 auto; }
+
 .models-list {
   display: flex;
   flex-wrap: wrap; }
@@ -88,13 +130,33 @@
 
 .models-list > li > a {
   display: block;
-  overflow: hidden; }
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative; }
+
+.models-list > li > a .txt {
+  position: absolute;
+  left: 5.555555555555556vw;
+  bottom: 5.555555555555556vw;
+  color: #fff;
+  z-index: 100; }
+
+.models-list > li > a .txt > strong {
+  display: block; }
+
+.models-list > li > a .txt > p {
+  opacity: 0; }
+
+.models-list > li.on > a .txt > p {
+  opacity: 1;
+  transition: opacity 1s; }
 
 .models-list > li > a img {
-  transition: transform .35s;
-  -webkit-transition: transform .35s; }
+  -webkit-transition: transform 1s;
+  transition: transform 1s; }
 
-.models-list > li > a:hover img {
+.models-list > li.on > a img {
   transform: scale(1.4);
   -webkit-transform: scale(1.4); }
 
@@ -123,7 +185,7 @@
 .other-links__list > li .link > span {
   display: table-cell;
   height: 100%;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.75);
   vertical-align: middle;
   border: 1px solid #000;
   font-size: 20px;
@@ -224,20 +286,23 @@
   line-height: 10px; }
 
 .car_color .exbtn {
-  display: flex;
+  text-align: center;
   margin: 0 auto; }
 
 .car_color .exbtn li {
-  margin-left: 3vh; }
+  display: inline-block;
+  width: 22.22222222222222vw; }
 
 .car_color .exbtn li button img {
   margin-bottom: 30px; }
 
 .car_color .inbtn {
-  display: flex; }
+  text-align: center;
+  margin: 0 auto; }
 
 .car_color .inbtn li {
-  margin-left: 3vh; }
+  display: inline-block;
+  width: 22.22222222222222vw; }
 
 .car_color .inbtn li button img {
   margin-bottom: 30px; }
@@ -284,18 +349,20 @@
 
 #carZone {
   width: 100%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  border: none; }
 
 #estimate {
-  width: 100%; }
+  width: 100%;
+  border: none; }
 
 #estimate th,
 td {
-  border: 1px solid black; }
+  border: none; }
 
 #estimate th {
-  background-color: #fff;
-  color: #000; }
+  color: #000;
+  background-color: #ece9e1; }
 
 #carZone td {
   text-align: center; }
@@ -304,10 +371,17 @@ td {
   font-size: 15px;
   font-weight: bold; }
 
+#total {
+  border: none;
+  background-color: #0d8fcd;
+  color: #fff; }
+
 .optionlist {
+  background-color: #ece9e1;
   text-align: center; }
   .optionlist tr td label * {
-    vertical-align: middle; }
+    vertical-align: middle;
+    border: none; }
 
 .final {
   text-align: center;

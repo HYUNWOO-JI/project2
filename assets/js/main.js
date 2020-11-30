@@ -1,39 +1,51 @@
 $(document).ready(function () {
-  $(window).on('scroll', function () {
-    var scrollT = $(this).scrollTop();
-
-    if (scrollT > $('.main_banner').offset().top - 500) {
-      $('.main_banner').addClass('on');
-    }
-  });
-  
-  //본문3 슬라이더
-  var mySwiper1 = new Swiper('.consulting .swiper-container', {
+  var swiperMainVisual = new Swiper('.main_visual .swiper-container', {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+    },
     pagination: {
-      el: '.swiper-pagination',
-      type: 'fraction',
-      //clickable: true, //bullet 타입일 경우 버튼 클릭시 이동 가능함
+        el: '.swiper-pagination',
+        clickable: true,
     },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
     },
-  })
+  });
+    //본문1 자동실행과 일시정지 추가
+      //일시정지 클릭
+      $('.main_visual .autostop').on('click', function () {
+        $(this).hide().siblings('.play_stop').show();
+        swiperMainVisual.autoplay.stop(); //https://swiperjs.com/api/#autoplay
+        return false;
+      });
+      //자동실행 클릭
+      $('.main_visual .autoplay').on('click', function () {
+        $(this).hide().siblings('.play_stop').show();
+        swiperMainVisual.autoplay.start();
+        return false;
+      });
 
-  //본문4 슬라이더
-  var mySwiper2 = new Swiper('.casestudy .swiper-container', {
-    spaceBetween: 10, //각 슬라이더 사이 공간
-    slidesPerView: 'auto', //한 화면에 보여질 슬라이더 개수 기본1
-    centeredSlides: true, //슬라이더 가운데 중요 슬라이더 위치
-    scrollbar: {
-      el: '.swiper-scrollbar',
-      draggable: true,    //스크롤바를 직접 드래그해서 이동가능
-    },
-    a11y: {
-      //prevSlideMessage: '이전 슬라이드',
-      //nextSlideMessage: '다음 슬라이드',
-      firstSlideMessage: '첫번째 슬라이드',
-      lastSlideMessage: '마지막 슬라이드',
-    }
-  })
+      // 본문2 모델 스크롤이펙트
+      var timer = 0;
+      var scrollY;
+    
+      $(window).on('scroll', function () {
+        clearTimeout(timer);
+    
+        timer = setTimeout(function () {
+          scrollY = $(this).scrollTop();
+          console.log(scrollY);
+          //스크롤바가이동한거리 + 윈도창 높이 > .fade의 브라우저의 수직위치 + 자신의 높이*0.5
+          var scrollBtm = scrollY + $(this).height();
+          $('.models-list li').each(function () {
+            var fadeBtm = $(this).offset().top + $(this).outerHeight()*0.5;
+            if (scrollBtm > fadeBtm) $(this).addClass('on');
+            else $(this).removeClass('on');
+          });
+        }, 50);
+      });
 });

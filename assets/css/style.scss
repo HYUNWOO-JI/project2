@@ -25,17 +25,35 @@
 }
 
 // index : 본문1
+.floating-wrap{
+  @include border-box;
+  position: fixed; width: 100%; background: $wgrey;  top: 0; left: 0;
+  padding: 7px 15px;  -webkit-box-pack: justify; align-items: center; 
+
+  .floating-inner {
+    width: 100%;display: flex; align-items: center;
+    .img-area {width: 45%;}
+  }
+  .info {width: 50%;}
+  .car-name{text-align: left;}
+  .price{text-align: left;}
+}
+
 .main_visual {
   .swiper-slide {position:relative;
   img {width: 100%;}
   }
   .slide-cont {
+    position:absolute;bottom:30px;left:40px;color:#000;
     h3{font-size: $font20; color: #fff; margin-bottom: 30px; font-weight: 700;}
-    p{font-size: $font17; color: #000; background-color: rgba(255, 255, 255, .8)}
+    p{font-size: $font17; color: #000; background-color: rgba(255, 255, 255, .8); padding: 1.5vw;}
     .p1{background-color: rgba(255, 255, 255, .8); color: #000;}
-    position:absolute;bottom:30px;left:30px;color:#000;
     .btn-item {@include radius(10px); 
-      display: inline-block; height: 45px; line-height: 45px; background: $wblue; font-size: 17px; color: #fff; font-weight: 700; margin-top: 10px; text-align: center;}
+      display: inline-block; height: 11.11111111111111vw; line-height: 11.11111111111111vw; padding: 0 2.777777777777778vw; background: $wblue; font-size: $font17; color: #fff; font-weight: 700; margin-top: 2.777777777777778vw; text-align: center;}
+  }
+  .play_stop {position: absolute; right: 40px; bottom: 30px; width: 35px; height: 35px; z-index: 100; 
+    &.autoplay{display: none; background: pink;}
+    &.autostop{background: blue;}
   }
   
 }
@@ -52,13 +70,18 @@ screen and (min-resolution: 3dppx) {
   .main_visual::before{background-image: url("../images/main/mv01x3.jpg");}
 }
 
+.carsearch{vertical-align: middle; margin: 0 auto;}
 
 // index : 본문2
 .models-list {display:flex;flex-wrap:wrap;}
 .models-list > li {flex-basis:50%;}
-.models-list > li > a {display:block;overflow:hidden;}
-.models-list > li > a img {transition:transform .35s;-webkit-transition:transform .35s;}
-.models-list > li > a:hover img {transform:scale(1.4);-webkit-transform:scale(1.4);}
+.models-list > li > a {display:block;overflow:hidden;width: 100%; height: 100%; position: relative;}
+.models-list > li > a .txt {position: absolute; left: 5.555555555555556vw; bottom: 5.555555555555556vw; color: #fff; z-index: 100;}
+.models-list > li > a .txt > strong {display: block;}
+.models-list > li > a .txt > p {opacity: 0;}
+.models-list > li.on > a .txt > p {opacity: 1; transition: opacity 1s;}
+.models-list > li > a img {-webkit-transition:transform 1s; transition:transform 1s;}
+.models-list > li.on > a img {transform:scale(1.4);-webkit-transform:scale(1.4);}
 
 // index : 본문3
 .car-explore {padding:30px 0;}
@@ -67,7 +90,7 @@ screen and (min-resolution: 3dppx) {
 // index : 본문4
 .other-links__list > li {position:relative;}
 .other-links__list > li .link {display:table;position:absolute;top:0;left:0;width:100%;height:100%;padding:50px;box-sizing:border-box;text-align:center;}
-.other-links__list > li .link > span {display:table-cell;height:100%;background:rgba(255, 255, 255, .5);vertical-align:middle;border:1px solid #000;font-size:20px;font-weight:bold;}
+.other-links__list > li .link > span {display:table-cell;height:100%;background:rgba(255, 255, 255, 0.75);vertical-align:middle;border:1px solid #000;font-size:20px;font-weight:bold;}
 
 // 서브 내차만들기 공통
 #header.carsell .btn_menu {display: none;}
@@ -108,7 +131,7 @@ screen and (min-resolution: 3dppx) {
   .txt p {display: inline-block; margin: 0 10px;}
   a {
     @include radius(10px);
-    display: block; height: 45px; line-height: 45px; background: $wblue; font-size: 17px; color: #fff; font-weight: 700; margin-top: 10px; }
+    display: block; height: 45px; line-height: 45px; background: $wblue; font-size: 17px; color: #fff; font-weight: 700; margin-top: 10px;}
 }
 
 // sub : 본문 2
@@ -121,11 +144,11 @@ screen and (min-resolution: 3dppx) {
 .car_color p {padding-top: 30px; border-bottom: 1px solid #333333; margin-bottom: 30px; } 
 
 .carcom h4 p {line-height: 10px;}
-.car_color .exbtn {display: flex; margin: 0 auto;}
-.car_color .exbtn li {margin-left: 3vh;}
+.car_color .exbtn {text-align: center; margin: 0 auto;}
+.car_color .exbtn li {display: inline-block; width: 22.22222222222222vw;}
 .car_color .exbtn li button img {margin-bottom: 30px;}
-.car_color .inbtn {display: flex;}
-.car_color .inbtn li {margin-left: 3vh;}
+.car_color .inbtn {text-align: center; margin: 0 auto;}
+.car_color .inbtn li {display: inline-block; width: 22.22222222222222vw;}
 .car_color .inbtn li button img {margin-bottom: 30px;}
 .btn-wrap {background: #0D8FCD; display: flex; width: 330px; height: 40px; line-height: 40px; margin: 0 auto; text-align: center;}
 
@@ -152,34 +175,46 @@ screen and (min-resolution: 3dppx) {
 #carZone {
   width: 100%;
   margin: 0 auto;
+  border: none;
+ 
 }
 
 #estimate {
   width: 100%;
+  border: none;
 }
 
 #estimate th,
 td {
-  border: 1px solid black;
+  border: none
 }
 
 #estimate th {
-  background-color: #fff;
-  color: #000;
+    color: #000;
+    background-color: #ece9e1;
 }
 
 #carZone td {
   text-align: center;
+  
 }
 
 #tfoot {
   font-size: 15px;
   font-weight: bold;
+ 
+}
+#total {
+  border: none;
+  background-color: #0d8fcd;
+  color: #fff;
 }
 .optionlist{
+  background-color: #ece9e1;
   text-align: center;
 tr td label * {
   vertical-align: middle;
+  border: none;
 }
 }
 // sub : 본문 3

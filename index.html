@@ -13,181 +13,226 @@
     <script src="assets/js/jquery-1.12.4.min.js"></script>
     <script src="assets/js/swiper.min.js"></script>
     <script src="assets/js/common.js"></script>
-    <script>
-        $(document).ready(function (){
-            var swiperMainVisual = new Swiper('.main_visual .swiper-container', {
-            spaceBetween: 30,
-            centeredSlides: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    });
-    </script>
+    <script src="assets/js/main.js"></script>
+
 </head>
 
 <body>
-  <div id="wrap"> <!--overflow: hidden 우측에 위치하는 네비게이션 제어-->
-    <header id="header">
-        <h1 class="logo">
-            <a href="index.html">
-                <img src="assets/images/common/BMW_Grey_Logo.png" alt="BMW KOREA" srcset="assets/images/common/BMW_Grey_Logox2.png 2x, assets/images/common/BMW_Grey_Logox3.png 3x">
-            </a>
-        </h1>
-        <button class="btn_menu"> <!-- 활성화되면 .active 추가됨-->
-            <span class="blind-b">메뉴 열기</span>
-            <span class="line top"></span>
-            <span class="line mid"></span>
-            <span class="line btm"></span>
-        </button>
-        <!-- #gnb는 modal 형식을 사용
+    <div id="wrap">
+        <!--overflow: hidden 우측에 위치하는 네비게이션 제어-->
+        <header id="header">
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="assets/images/common/BMW_Grey_Logo.png" alt="BMW KOREA"
+                        srcset="assets/images/common/BMW_Grey_Logox2.png 2x, assets/images/common/BMW_Grey_Logox3.png 3x">
+                </a>
+            </h1>
+            <button class="btn_menu">
+                <!-- 활성화되면 .active 추가됨-->
+                <span class="blind-b">메뉴 열기</span>
+                <span class="line top"></span>
+                <span class="line mid"></span>
+                <span class="line btm"></span>
+            </button>
+            <!-- #gnb는 modal 형식을 사용
         1) 열기 버튼을 클릭하면 #gnb 첫번째 a에 포커스 강제 이동
         2) 닫기 버튼을 누르기 전까지는 모달내부에서만 포커스 회전
         3) 닫기 버튼을 처음의 위치(열기버튼)로 포커스 강제 이동 -->
-        <nav id="gnb">
-            <ul>
-                <li class="gnb1">
-                    <a href="model/model.html" data-link="first">모델</a>
-                    <ul>
-                        <li><a href="">SEDAN</a></li>
-                        <li><a href="">SUV</a></li>
-                        <li><a href="">M</a></li>
-                    </ul>
-                </li>
-                <li class="gnb2">
-                    <a href="car/car.html">내 차 만들기</a>
-                </li>
-                <li class="gnb3">
-                    <a href="customer/customer.html" data-link="last">고객지원</a>
-                    <ul>
-                        <li><a href="customer/customer.html">고객센터</a></li>
-                        <li><a href="customer/list.html">영업점 조회</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+            <nav id="gnb">
+                <ul>
+                    <li class="gnb1">
+                        <a href="model/model.html" data-link="first">모델</a>
+                        <ul>
+                            <li><a href="">SEDAN</a></li>
+                            <li><a href="">SUV</a></li>
+                            <li><a href="">M</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb2">
+                        <a href="car/car.html">내 차 만들기</a>
+                    </li>
+                    <li class="gnb3">
+                        <a href="customer/customer.html" data-link="last">고객지원</a>
+                        <ul>
+                            <li><a href="customer/customer.html">고객센터</a></li>
+                            <li><a href="customer/list.html">영업점 조회</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
 
-    </header>
+        </header>
 
-    <section id="content" role="main"> <!-- role= "main"는 한페이지에 하나만 존재함-->
-        <h2 class="blind-b">BMW KOREA 소개</h2> 
-        
-        <article class="main_visual"><!-- .top_visual 공통 / main visual 인덱스만 -->
-            <div class="swiper-container">
-                <div class="txtwrap swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="assets/images/main/main1.jpg" alt="">
-                        <div class="slide-cont">
-                            <h3 class=>THE 3</h3>
-                            <p class="p1">달리는 모든 순간이 혁신이다</p>
-                            <p class="p1">THE ALL-NEW BMW 3 SERIES</p>
-                            <span class="btn-item"><a href="">자세히 보기</a></span>
-                            <span class="btn-item"><a href="car/car.html">내 차 만들기</a></span>
+        <section id="content" role="main">
+            <!-- role= "main"는 한페이지에 하나만 존재함-->
+            <h2 class="blind-b">BMW KOREA 소개</h2>
+
+            <article class="main_visual">
+                <!-- .top_visual 공통 / main visual 인덱스만 -->
+                <div class="swiper-container">
+                    <div class="txtwrap swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="assets/images/main/main1.jpg" alt="">
+                            <div class="slide-cont">
+                                <h3 class=>THE 3</h3>
+                                <p class="p1">달리는 모든 순간이 혁신이다</p>
+                                <p class="p1">THE ALL-NEW BMW 3 SERIES</p>
+                                <span class="btn-item"><a href="">자세히 보기</a></span>
+                                <span class="btn-item"><a href="car/car.html">내 차 만들기</a></span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/images/main/main2.jpg" alt="">
+                            <div class="slide-cont">
+                                <h3>THE 5</h3>
+                                <p>달리는 모든 순간이 혁신이다</p>
+                                <p>THE ALL-NEW BMW 5 SERIES</p>
+                                <span class="btn-item"><a href="">자세히 보기</a></span>
+                                <span class="btn-item"><a href="car/car.html">내 차 만들기</a></span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/images/main/main3.jpg" alt="">
+                            <div class="slide-cont">
+                                <h3>THE 7</h3>
+                                <p>달리는 모든 순간이 혁신이다</p>
+                                <p>THE ALL-NEW BMW 7 SERIES</p>
+                                <span class="btn-item"><a href="">자세히 보기</a></span>
+                                <span class="btn-item"><a href="car/car.html">내 차 만들기</a></span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/images/main/main4.jpg" alt="">
+                            <div class="slide-cont">
+                                <h3>X 7</h3>
+                                <p>달리는 모든 순간이 혁신이다</p>
+                                <p>THE ALL-NEW BMW X7</p>
+                                <span class="btn-item"><a href="">자세히 보기</a></span>
+                                <span class="btn-item"><a href="car/car.html">내 차 만들기</a></span>
+                            </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <img src="assets/images/main/main2.jpg" alt="">
-                        <div class="slide-cont">
-                            <h3>THE 5</h3>
-                            <p>달리는 모든 순간이 혁신이다</p>
-                            <p>THE ALL-NEW BMW 5 SERIES</p>
-                            <span class="btn-item"><a href="">자세히 보기</a></span>
-                            <span class="btn-item"><a href="car/car.html">내 차 만들기</a></span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="assets/images/main/main3.jpg" alt="">
-                        <div class="slide-cont">
-                            <h3>THE 7</h3>
-                            <p>달리는 모든 순간이 혁신이다</p>
-                            <p>THE ALL-NEW BMW 7 SERIES</p>
-                            <span class="btn-item"><a href="">자세히 보기</a></span>
-                            <span class="btn-item"><a href="car/car.html">내 차 만들기</a></span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="assets/images/main/main4.jpg" alt="">
-                        <div class="slide-cont">
-                            <h3>X 7</h3>
-                            <p>달리는 모든 순간이 혁신이다</p>
-                            <p>THE ALL-NEW BMW X7</p>
-                            <span class="btn-item"><a href="">자세히 보기</a></span>
-                            <span class="btn-item"><a href="car/car.html">내 차 만들기</a></span>
-                        </div>
-                    </div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                    <!-- 자동실행, 일시정지 추가 -->
+                    <button class="autoplay play_stop" title="재생">
+                        <span class="blind-b">재생</span>
+                    </button>
+                    <button class="autostop play_stop" title="일시정지">
+                        <span class="blind-b">일시정지</span>
+                    </button>
                 </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-            
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            
-                <!-- If we need scrollbar -->
-                <div class="swiper-scrollbar"></div>
+            </article>
+
+            <article class="models">
+                <ul class="models-list">
+                    <li>
+                        <a href="">
+                            <div class="txt">
+                                <strong>THE 3</strong>
+                                <p>47,000,000원</p>
+                            </div>
+                            <img src="assets/images/main/car1.jpg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="txt">
+                                <strong>THE 3</strong>
+                                <p>47,000,000원</p>
+                            </div>
+                            <img src="assets/images/main/car2.jpg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="txt">
+                                <strong>THE 3</strong>
+                                <p>47,000,000원</p>
+                            </div>
+                            <img src="assets/images/main/car3.jpg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="txt">
+                                <strong>THE 3</strong>
+                                <p>47,000,000원</p>
+                            </div>
+                            <img src="assets/images/main/car4.jpg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="txt">
+                                <strong>THE 3</strong>
+                                <p>47,000,000원</p>
+                            </div>
+                            <img src="assets/images/main/car5.jpg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="txt">
+                                <strong>THE 3</strong>
+                                <p>47,000,000원</p>
+                            </div>
+                            <img src="assets/images/main/car6.jpg">
+                        </a>
+                    </li>
+                  
+                </ul>
+            </article>
+
+            <article class="car-explore">
+                <h3>차량 탐색</h3>
+                <div class="carserch">
+                    <ul>
+                        <li><a href=""><img src="assets/images/car/M2_white.png" alt=""></a></li>
+                    </ul>
+
+                </div>
+            </article>
+
+            <article class="other-links">
+                <ul class="other-links__list">
+                    <li>
+                        <img src="assets/images/main/mv01.jpg" alt="">
+                        <a href="" class="link"><span>딜러 위치</span></a>
+                    </li>
+                    <li>
+                        <img src="assets/images/main/mv02.jpg" alt="">
+                        <a href="" class="link"><span>시승 신청</span></a>
+                    </li>
+                    <li>
+                        <img src="assets/images/main/mv03.jpg" alt="">
+                        <a href="" class="link"><span>카탈로그 다운로드</span></a>
+                    </li>
+                </ul>
+            </article>
+        </section>
+
+        <footer id="footer">
+            <div class="menu">
+                <ul>
+                    <li><a href="">모바일App</a></li>
+                    <li> <a href="">개인정보 처리방침</a></li>
+                    <li><a href="">윤리경영 사이버 감사실</a> </li>
+                    <li><a href="">사이트맵</a></li>
+                    <li><a href="">고객센터 : 080-600-6000</a></li>
+                    <li><a href="">저작권안내</a></li>
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="">영상정보처리기기</a></li>
+                </ul>
             </div>
-        </article>
-
-        <article class="models">
-            <ul class="models-list">
-                <li><a href="javascript:;"><img src="assets/images/main/car1.jpg"></a></li>
-                <li><a href="javascript:;"><img src="assets/images/main/car2.jpg"></a></li>
-                <li><a href="javascript:;"><img src="assets/images/main/car3.jpg"></a></li>
-                <li><a href="javascript:;"><img src="assets/images/main/car4.jpg"></a></li>
-                <li><a href="javascript:;"><img src="assets/images/main/car5.jpg"></a></li>
-                <li><a href="javascript:;"><img src="assets/images/main/car6.jpg"></a></li>
-            </ul>
-        </article>
-
-        <article class="car-explore">
-            <h3>차량 탐색</h3>
-        </article>
-
-        <article class="other-links">
-            <ul class="other-links__list">
-                <li>
-                    <img src="assets/images/main/mv01.jpg" alt="">
-                    <a href="" class="link"><span>딜러 위치</span></a>
-                </li>
-                <li>
-                    <img src="assets/images/main/mv02.jpg" alt="">
-                    <a href="" class="link"><span>시승 신청</span></a>
-                </li>
-                <li>
-                    <img src="assets/images/main/mv03.jpg" alt="">
-                    <a href="" class="link"><span>카탈로그 다운로드</span></a>
-                </li>
-            </ul>
-        </article>
-    </section>
-
-    <footer id="footer">
-        <div class="menu">
-            <ul>
-                <li><a href="">모바일App</a></li>
-                <li> <a href="">개인정보 처리방침</a></li>
-                <li><a href="">윤리경영 사이버 감사실</a> </li>
-                <li><a href="">사이트맵</a></li>
-                <li><a href="">고객센터 : 080-600-6000</a></li>
-                <li><a href="">저작권안내</a></li>
-                <li><a href="">이용약관</a></li>
-                <li><a href="">영상정보처리기기</a></li>
-            </ul>
-        </div>
-        <div class="copy-inner">
-            <p class="copyright">COPYRIGHT&copy;BMW MOTOR COMANY. <br> ALL RIGHTS RESERVED</p>
-        </div>
-    </footer>
-  </div>
+            <div class="copy-inner">
+                <p class="copyright">COPYRIGHT&copy;BMW MOTOR COMANY. <br> ALL RIGHTS RESERVED</p>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>
