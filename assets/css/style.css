@@ -54,6 +54,7 @@
     width: 100%;
     display: flex;
     align-items: center; }
+    .floating-wrap img {width: 200px;}
     .floating-wrap .floating-inner .img-area {
       width: 45%; }
   .floating-wrap .info {
@@ -107,9 +108,9 @@
   z-index: 100; }
   .main_visual .play_stop.autoplay {
     display: none;
-    background: pink; }
+    color: #0d8fcd; font-size: 30px; }
   .main_visual .play_stop.autostop {
-    background: blue; }
+    color: #fff; font-size: 30px;}
 
 @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
   .main_visual::before {
