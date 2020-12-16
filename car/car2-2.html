@@ -7,16 +7,27 @@
     <title>내 차 만들기 - BMW KOREA</title>
     <link rel="apple-touch-icon" href="../assets/images/common/favicon.ico">
     <link rel="shortcut icon" href="../assets/images/common/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../assets/css/common.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/jquery-1.12.4.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/car.js"></script>
     <script type="text/javascript">
-        function car() {
-            var value = document.getElementById("total").defaultValue;
-            var basic_car = Number(value);
+        window.addEventListener('load', function () {
+            var estimateChk = document.getElementById('estimate');
 
+            estimateChk.addEventListener('click', car);
+        });
+
+        function car() {
+            //1) 초기값 가져와서 쉼표를 제거하기
+            var value = document.getElementById("total").defaultValue.replace(/,/g, '');
+            // console.log(typeof value); string
+            //2) 덧셈을 하기위해 number type으로 변경
+            var basic_car = Number(value);
+            // console.log(value); number
+
+            //3) 5개의 input 태그중 checked 속성을 가진 것을 선택하여 더해주기
             for (var i = 1; i <= 5; i++) {
                 var chkObj = document.getElementById("opt" + i);
 
@@ -24,10 +35,14 @@
                     basic_car += Number(chkObj.value);
                 }
             }
+            //4) 값을 다시 문자열로 변경한 후 3자리 콤마 설정
+            basic_car = String(basic_car).replace( /\B(?=(\d{3})+(?!\d))/g, ',');
+            //5) #total에 다시 대입
             document.getElementById("total").value = basic_car;
         }
     </script>
     <style>
+        /* 이건 css 문서로 옮기세요 */
         table {
             border-collapse: collapse;
             border-spacing: 0;
@@ -137,7 +152,7 @@
                                 <table id="estimate">
                                     <colgroup>
                                         <!-- 콜그룹 함수는 -->
-                                        <col width="260px">
+                                        <col width="260px"><!-- html5에서 부터 col 태그에 width 속성은 사용할수 없어요 -->
                                         <col width="80px">
                                         <col width="20px">
                                     </colgroup>
@@ -152,41 +167,38 @@
 
                                     <tbody class="optionlist">
                                         <tr>
-                                            <td class="optscr"><label for="opt1"> <img src="../assets/images/car/option1.jpg" alt=""
-                                                        width="170px" height="80px">레이저라이트</label></td>
+                                            <td class="optscr">
+                                                <label for="opt1"><img src="../assets/images/car/option1.jpg" alt="" width="170" height="80">레이저라이트</label>
+                                            </td>
                                             <td>660,000</td>
-                                            <td><input type="checkbox" name="opt1" id="opt1" value="660000"
-                                                    onclick="car();"></td>
+                                            <td><input type="checkbox" name="opt1" id="opt1" value="660000"></td>
+                                            <!-- <td><input type="checkbox" name="opt1" id="opt1" value="660000" onclick="car();"></td> 이렇게 하지 말고!! -->
                                         </tr>
 
                                         <tr>
                                             <td class="optscr"><label for="opt2"><img src="../assets/images/car/option2.jpg" alt=""
                                                         width="170px" height="80px">터치 네비게이션</label></td>
                                             <td>180,000</td>
-                                            <td><input type="checkbox" name="opt2" id="opt2" value="180000"
-                                                    onclick="car();"></td>
+                                            <td><input type="checkbox" name="opt2" id="opt2" value="180000"></td>
                                         </tr>
 
                                         <tr>
                                             <td class="optscr"><label for="opt3"><img src="../assets/images/car/option3.jpg" alt=""
                                                         width="170px" height="80px">전자식 트렁크</label></td>
                                             <td>700,000</td>
-                                            <td><input type="checkbox" name="opt3" id="opt3" value="700000"
-                                                    onclick="car();"></td>
+                                            <td><input type="checkbox" name="opt3" id="opt3" value="700000"></td>
                                         </tr>
                                         <tr>
                                             <td class="optscr"><label for="opt4"><img src="../assets/images/car/option4.jpg" alt=""
                                                         width="170px" height="80px">파노라마 선루프</label></td>
                                             <td>940,000</td>
-                                            <td><input type="checkbox" name="opt4" id="opt4" value="940000"
-                                                    onclick="car();"></td>
+                                            <td><input type="checkbox" name="opt4" id="opt4" value="940000"></td>
                                         </tr>
                                         <tr>
                                             <td class="optscr"><label for="opt5"><img src="../assets/images/car/option5.jpg" alt=""
                                                         width="170px" height="80px">엠비언트 라이트</label></td>
                                             <td>640,000</td>
-                                            <td><input type="checkbox" name="opt5" id="opt5" value="640000"
-                                                    onclick="car();"></td>
+                                            <td><input type="checkbox" name="opt5" id="opt5" value="640000"></td>
                                         </tr>
                                     </tbody>
 
@@ -195,8 +207,7 @@
                                         <tr>
                                             <th scope="col">총 차량 가격</th>
                                             <td colspan="2">
-                                                <input type="text" name="total" id="total" value="47500000"
-                                                    readonly="readonly">
+                                                <input type="text" name="total" id="total" value="47,500,000" readonly="readonly">
                                             </td>
                                         </tr>
                                     </tfoot>
